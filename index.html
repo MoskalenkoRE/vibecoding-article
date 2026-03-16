@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вайбкодинг: миф или реальность?</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b1120;
+  color: #e2e8f0;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15,23,42,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+}
+
+/* HERO PARALLAX */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(11,17,32,0.75), rgba(11,17,32,0.75)),
+              url('hero.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: white;
+}
+
+/* ARTICLE SECTIONS */
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 140px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-left: 4px solid #38bdf8;
+  font-style: italic;
+}
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  background: #020617;
+  color: #94a3b8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  nav div:last-child {
+    display: none;
+  }
+
+  section {
+    padding: 100px 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>VIBECODING</strong></div>
+  <div>
+    <a href="#myth">Мифы</a>
+    <a href="#reality">Реальность</a>
+    <a href="#start">Как начать</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Вайбкодинг: миф или реальность?</h1>
+</div>
+
+<section>
+<p>Последние пару лет интернет орёт:  
+«Теперь можно создавать продукты без знания программирования!»  
+«AI всё напишет!»  
+«Разработчики больше не нужны!»</p>
+
+<p>И тут два лагеря: одни кричат — это будущее.  
+Другие — пузырь и конец индустрии.</p>
+
+<p>Давай разбираться спокойно.</p>
+</section>
+
+<section id="myth">
+<h2>Миф №1: AI всё сделает сам</h2>
+<p>Нет. Не сделает.</p>
+<p>AI — не волшебная палочка. Это инструмент. Он может ускорить, подсказать, объяснить.  
+Но если ты не понимаешь, что хочешь — будет каша.</p>
+</section>
+
+<section>
+<h2>Миф №2: Думать больше не нужно</h2>
+<p>Главное заблуждение.</p>
+<ul>
+<li>Нужно понимать, что такое фронтенд</li>
+<li>Что такое сервер</li>
+<li>Как работает API</li>
+<li>Как двигаются данные</li>
+</ul>
+<p>Без этого ты просто копируешь код и надеешься на чудо.</p>
+</section>
+
+<section id="reality">
+<h2>Реальность</h2>
+<p>Можно:</p>
+<ul>
+<li>Сделать Chrome‑расширение</li>
+<li>Поднять VPS</li>
+<li>Настроить proxy</li>
+<li>Собрать MVP</li>
+</ul>
+<p>Без профильного образования.</p>
+</section>
+
+<section id="start">
+<h2>Как начать</h2>
+<p><strong>1. Выбери конкретную задачу.</strong></p>
+<p><strong>2. Пиши подробное описание.</strong></p>
+<p><strong>3. Работай маленькими шагами.</strong></p>
+<p><strong>4. Учись на ходу.</strong></p>
+</section>
+
+<section>
+<h2>Итог</h2>
+<p>❌ Миф — что можно ничего не понимать и строить сложные системы.</p>
+<p>✅ Реальность — можно реализовывать идеи без глубокого знания программирования.</p>
+
+<blockquote>
+Вайбкодинг — это не магия. Это инструмент.
+</blockquote>
+</section>
+
+<footer>
+© 2026 — Статья о вайбкодинге
+</footer>
+
+<script>
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>
