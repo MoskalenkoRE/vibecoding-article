@@ -8,152 +8,182 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0b1120;
-  color: #e2e8f0;
-  line-height: 1.7;
-  overflow-x: hidden;
+  font-family:'Inter',sans-serif;
+  background:#0b1120;
+  color:#e2e8f0;
+  line-height:1.7;
+  overflow-x:hidden;
 }
 
 /* NAV */
 
 nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  padding: 18px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(15,23,42,0.6);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(15,23,42,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: 600;
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-weight:600;
 }
 
-/* HERO PARALLAX */
+/* HERO */
 
 .hero {
-  height: 100vh;
-  background: linear-gradient(rgba(11,17,32,0.75), rgba(11,17,32,0.75)),
-              url('images/prokopach.gif') center/cover no-repeat fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 10%;
-}
-  
-.hero-text {
-  text-align: center;
+  height:100vh;
+  background:
+  linear-gradient(rgba(11,17,32,0.85), rgba(11,17,32,0.85)),
+  url('images/prokopach.gif') center/cover no-repeat fixed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 10%;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
-  color: white;
-}
-.hero h2 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  font-weight: 400;
-  color: #cbd5e1;
+  font-size:clamp(2.5rem,6vw,5rem);
+  font-weight:800;
+  color:white;
 }
 
-/* ARTICLE SECTIONS */
+.hero h2 {
+  font-size:clamp(1.5rem,3vw,2.2rem);
+  font-weight:400;
+  color:#cbd5e1;
+}
+
+/* SECTIONS */
 
 section {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 80px 20px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  max-width:820px;
+  margin:0 auto;
+  padding:80px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
 }
 
 section.visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
 
 h2 {
-  font-size: 1.9rem;
-  margin-bottom: 20px;
-  color: white;
+  font-size:1.9rem;
+  margin-bottom:20px;
+  color:white;
 }
 
-p {
-  margin-bottom: 20px;
+p { margin-bottom:20px; }
+ul { margin-bottom:20px; padding-left:20px; }
+
+/* DIVIDER */
+
+.divider {
+  display:flex;
+  align-items:center;
+  text-align:center;
+  color:#38bdf8;
+  font-weight:700;
+  margin:120px auto 60px auto;
+  max-width:820px;
 }
 
-ul {
-  margin-bottom: 20px;
-  padding-left: 20px;
+.divider::before,
+.divider::after {
+  content:"";
+  flex:1;
+  border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
-/* IMAGES */
+.divider:not(:empty)::before { margin-right:20px; }
+.divider:not(:empty)::after { margin-left:20px; }
 
-img {
-  display: block;
-  max-width: 700px;
-  width: 100%;
-  margin: 50px auto;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+/* MYTH BOX */
+
+.myth-box {
+  background:rgba(248,113,113,0.06);
+  border-left:4px solid #f87171;
+  padding:40px;
+  margin:60px auto;
+  border-radius:14px;
 }
 
-/* BLOCKQUOTE */
+.myth-box h2 { color:#ffffff; }
+
+/* REALITY BOX */
+
+.reality-box {
+  background:rgba(52,211,153,0.06);
+  border-left:4px solid #34d399;
+  padding:40px;
+  border-radius:14px;
+  margin:60px auto;
+}
+
+.reality-box h2 { color:#34d399; }
+
+/* CONCLUSION */
+
+.conclusion-box {
+  background:linear-gradient(135deg,
+  rgba(56,189,248,0.08),
+  rgba(52,211,153,0.08));
+  padding:60px;
+  border-radius:18px;
+  margin-top:60px;
+}
 
 blockquote {
-  margin: 30px 0;
-  padding: 20px;
-  background: rgba(255,255,255,0.05);
-  border-left: 4px solid #38bdf8;
-  font-style: italic;
-  border-radius: 8px;
+  margin:30px 0;
+  padding:20px;
+  background:rgba(255,255,255,0.05);
+  border-left:4px solid #38bdf8;
+  font-style:italic;
+  border-radius:8px;
+}
+
+/* IMAGE */
+
+img {
+  display:block;
+  max-width:700px;
+  width:100%;
+  margin:50px auto;
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
 /* FOOTER */
 
 footer {
-  text-align: center;
-  padding: 50px 20px;
-  background: #020617;
-  color: #94a3b8;
-  margin-top: 40px;
+  text-align:center;
+  padding:50px 20px;
+  background:#020617;
+  color:#94a3b8;
+  margin-top:80px;
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
-
-  nav div:last-child {
-    display: none;
-  }
-
-  section {
-    padding: 60px 20px;
-  }
-
-  img {
-    margin: 40px auto;
-  }
+@media(max-width:768px){
+  nav div:last-child { display:none; }
+  section { padding:60px 20px; }
 }
 </style>
 </head>
@@ -162,15 +192,10 @@ footer {
 
 <nav>
   <div><strong>VIBECODING</strong></div>
-  <div>
-    <a href="#myth">Мифы</a>
-    <a href="#reality">Реальность</a>
-    <a href="#start">Как начать</a>
-  </div>
 </nav>
 
 <div class="hero">
-  <div class="hero-text">
+  <div>
     <h1>Вайбкодинг</h1>
     <h2>миф или реальность?</h2>
   </div>
@@ -181,12 +206,9 @@ footer {
   «Теперь можно создавать продукты без знания программирования!»<br>
   «AI всё напишет!»<br>
   «Разработчики больше не нужны!»</p>
-
   <p>Одни в восторге — будущее наступило.<br>
   Другие в панике — индустрия умирает.</p>
-
   <p>Правда, как обычно, где‑то посередине.</p>
-
   <p>Вайбкодинг — это не магия и не кнопка “сделать стартап”.  
   Это момент в истории, когда инструменты стали доступны почти каждому.</p>
   <img src="images/druzko.jpg" alt="Дружко">
@@ -194,66 +216,54 @@ footer {
 
 <section>
   <h2>Что такое вайбкодинг по‑настоящему?</h2>
-
   <p>Вайбкодинг — это когда ты не учишь язык программирования годами,  
   а формулируешь идею и постепенно собираешь её с помощью AI.</p>
-
   <p>Ты не начинаешь с “надо выучить React”.  
   Ты начинаешь с:</p>
-
   <ul>
     <li>«Хочу автоматизировать отчёты на работе»</li>
     <li>«Хочу расширение, которое ускорит поиск клиентов»</li>
     <li>«Хочу сервис для записи на консультации»</li>
     <li>«Хочу бота, который отвечает на частые вопросы»</li>
   </ul>
-
   <p>AI становится твоим ассистентом.  
   Не мозгом вместо тебя. Ассистентом.</p>
 </section>
 
-<section id="myth">
-  <h2>Миф №1: AI всё сделает сам</h2>
+<div class="divider">Мифы о вайбкодинге</div>
 
+<section class="myth-box" id="myth">
+  <h2>Миф №1: AI всё сделает сам</h2>
   <p>Самый популярный миф — написать:  
   “Сделай мне стартап, который принесёт миллион”.</p>
-
   <p>AI работает хорошо, когда задача конкретная:</p>
-
   <ul>
     <li>есть входные данные</li>
     <li>понятен результат</li>
     <li>описана логика</li>
   </ul>
-
   <p>Если ты сам не понимаешь, что нужно — AI не угадает.  
   Это не маг. Это инструмент.</p>
 </section>
 
-<section>
+<section class="myth-box">
   <h2>Миф №2: Теперь думать не нужно</h2>
-
   <p>Вот тут самая опасная иллюзия.</p>
-
   <p>Вайбкодинг убирает барьер входа.  
   Но он не убирает необходимость мыслить.</p>
-
   <ul>
     <li>Что ты хочешь получить?</li>
     <li>Какие шаги к этому ведут?</li>
     <li>Где данные берутся?</li>
     <li>Куда они отправляются?</li>
   </ul>
-
   <p>Если просто копировать код — ты зависим от каждого бага.  
   Если понимаешь структуру — ты управляешь системой.</p>
 </section>
 
-<section id="reality">
+<section id="reality" class="reality-box">
   <h2>Что реально можно сделать с вайбкодингом?</h2>
-
   <p>Очень многое.</p>
-
   <ul>
     <li>Chrome‑расширения</li>
     <li>Telegram‑ботов</li>
@@ -264,50 +274,39 @@ footer {
     <li>Прототип стартапа</li>
     <li>Лендинг или статью (как эту)</li>
   </ul>
-
   <p>Раньше путь выглядел так:<br>
   идея → поиск разработчика → бюджет → месяцы ожидания → релиз.</p>
-
   <p>Теперь:<br>
   идея → прототип за неделю → тест → решение, масштабировать или нет.</p>
-
   <p>Это огромная разница.</p>
 </section>
 
 <section>
   <h2>Где граница?</h2>
-
   <p>Вайбкодинг не заменяет инженеров в сложных системах:</p>
-
   <ul>
     <li>высокие нагрузки</li>
     <li>банковская безопасность</li>
     <li>миллионы пользователей</li>
     <li>сложная архитектура</li>
   </ul>
-
   <p>Но 80% задач в жизни — не такого уровня.</p>
-
   <p>Большинство идей — это:</p>
-
   <ul>
     <li>внутренние процессы</li>
     <li>автоматизация рутины</li>
     <li>небольшие сервисы</li>
     <li>проверка гипотез</li>
   </ul>
-
   <p>И здесь вайбкодинг раскрывается максимально.</p>
 </section>
 
 <section id="start">
   <h2>Как начать?</h2>
-
   <p><strong>1. Начни с задачи, а не с технологии.</strong></p>
   <p><strong>2. Разбей идею на маленькие шаги.</strong></p>
   <p><strong>3. Проверяй каждый шаг отдельно.</strong></p>
   <p><strong>4. Спрашивай AI, если что‑то непонятно.</strong></p>
-
   <p>Через месяц ты уже видишь структуру систем.  
   Через три — собираешь рабочие инструменты.  
   Через полгода — думаешь как архитектор процессов.</p>
@@ -315,48 +314,36 @@ footer {
 
 <section>
   <h2>Так миф или реальность?</h2>
-
   <p>Миф — что можно ничего не понимать и строить сложные системы.</p>
   <p>Реальность — что можно реализовывать идеи без глубокого знания программирования.</p>
-
   <blockquote>
     Вайбкодинг — это не shortcut к «сеньору».  
     Это shortcut к автономности.
   </blockquote>
 </section>
 
-<section>
+<section class="conclusion-box">
   <h2>Итоги</h2>
-
   <p>Мы живём в момент, когда идея важнее диплома.</p>
-
   <p>Когда скорость тестирования гипотез важнее идеального кода.</p>
-
   <p>Когда один человек с инициативой и доступом к AI может сделать то,  
   что раньше требовало команду.</p>
-
   <p>Не нужно ждать разрешения.  
   Не нужно ждать инвестора.  
   Не нужно ждать “подходящего момента”.</p>
-
   <p>Если у тебя есть идея — ты можешь начать сегодня.</p>
-
   <p>Собрать прототип.  
   Проверить спрос.  
   Автоматизировать рутину.  
   Создать инструмент для себя.</p>
-
   <p>Да, будут баги.  
   Да, будет путаница.  
   Да, иногда всё сломается.</p>
-
   <p>Но теперь путь к реализации — это не годы, а недели.</p>
-
   <blockquote>
     Вайбкодинг — это не про код.  
     Это про смелость делать.
   </blockquote>
-
   <p><strong>И если выбирать между “я не программист” и “я попробую” —  
   всегда выбирай второе.</strong></p>
 </section>
@@ -366,19 +353,15 @@ footer {
 </footer>
 
 <script>
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
       entry.target.classList.add("visible");
     }
   });
-}, { threshold: 0.15 });
-
-sections.forEach(section => {
-  observer.observe(section);
-});
+},{threshold:0.15});
+sections.forEach(section=>observer.observe(section));
 </script>
 
 </body>
